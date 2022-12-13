@@ -1,65 +1,69 @@
-<html>
+<!DOCTYPE html> 
+<html> 
 
-<video autoplay loop muted 
-<source src="https://trwalt.github.io/codingfall22/images/KitchenSmall.mp4">
-</video>
-
-
-  <head>
-    <style>
-
-video {
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  z-index: -1;
-}      
-      
-a:link {
-  color: transparent;
-  background-color: transparent;
-  text-decoration: none;
-}
-
-a:visited {
-  color: transparent;
-  background-color: transparent;
-  text-decoration: none;
-}
-
-a:hover {
-  color: white;
-  background-color: transparent;
-  text-decoration: none;
-}
-
-a:active {
-  color: yellow;
-  background-color: transparent;
-  text-decoration: none;
-}   
-      
+<style>
 body{
 background-color: black;
-color: white;
-font-size: 5vw;
-font-size: 8vh;  
-text-align:center;
-margin-top: 30px
-margin-bottom: 30px
-font-family: Arial, Helvetica, sans-serif;
-  </style>
-  </head>
-<body>
-  
+}
+#Video1 {
+  width: 100vw; height: 100vh;
+  object-fit: cover; position: fixed;
+  left: 0; right: 0; top: 0; bottom: 0;
+  z-index: 0; opacity: .5;
+}      
+#Video2 {
+  width: 100vw; height: 100vh;
+  object-fit: cover; position: fixed;
+  left: 0; right: 0; top: 0; bottom: 0;
+  z-index: -1; opacity: 1;
+}      
+</style>
 
-<a href=index>RETURN HOME</a>
+<body onload="DoThisThang()">
 
- 
-</body>
+<video id="Video1" autoplay loop muted>
+  <source src="https://trwalt.github.io/codingfall22/images/KitchenSmall.mp4" type="video/mp4">
+  Your browser does not support HTML5 video.
+</video>
+
+<video id="Video2" autoplay loop muted>
+  <source src="https://trwalt.github.io/codingfall22/images/KitchenSmall.mp4" type="video/mp4">
+  Your browser does not support HTML5 video.
+</video>
+
+  <a href=index>RETURN HOME</a>
+</body>   
+<script>
+
+var VidRate1
+var VidRate2
+var VidDuration1
+var VidDuration2
+var VidStart1
+var VidStart2
+
+
+var vid1 = document.getElementById("Video1"); 
+var vid2 = document.getElementById("Video2");
+
+function DoThisThang() {
+setTimeout(function setPlaySpeed1(){ 
+vid1.playbackRate = Math.random()*4-2;
+DoThisThang();
+}, 10000);
+}
+
+vidDuration1 = Math.random()*10+2;
+setTimeout(setPlaySpeed1(), vidDuration1);
+
+function setPlaySpeed2(){ 
+setTimeout(setPlaySpeed2(), vidDuration2);
+vid2.playbackRate = Math.random()*3-1.5;
+vidDuration2 = Math.random()*10+2;
+} 
+
+
+</script> 
+
 </html>
+
