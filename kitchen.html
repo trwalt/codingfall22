@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!<!DOCTYPE html> 
 <html> 
 
 <style>
@@ -19,50 +19,80 @@ background-color: black;
 }      
 </style>
 
-<body onload="DoThisThang()">
+<body>
 
-<video id="Video1" autoplay loop muted>
+<video id="Video1" autoplay loop muted 
   <source src="https://trwalt.github.io/codingfall22/images/KitchenSmall.mp4" type="video/mp4">
   Your browser does not support HTML5 video.
 </video>
+
+
 
 <video id="Video2" autoplay loop muted>
   <source src="https://trwalt.github.io/codingfall22/images/KitchenSmall.mp4" type="video/mp4">
   Your browser does not support HTML5 video.
 </video>
 
-<script>
 
-var VidRate1
-var VidRate2
-var VidDuration1
-var VidDuration2
-var VidStart1
-var VidStart2
+
+<script>
 
 
 var vid1 = document.getElementById("Video1"); 
 var vid2 = document.getElementById("Video2");
 
-function DoThisThang() { 
-setTimeout(function setPlaySpeed1(){ 
+
+function ControlVid1() { 
+let delay1 = (Math.floor(Math.random() * 20000)+500);
 vid1.playbackRate = Math.random()*3-1.5;
-DoThisThang();
-}, 5000);
+setTimeout(function resetPlaySpeed1(){ 
+ControlVid1() ;
+}, delay1);
 }
 
-vidDuration1 = Math.random()*10+2;
-setTimeout(setPlaySpeed1(), vidDuration1);
-
-function setPlaySpeed2(){ 
-setTimeout(setPlaySpeed2(), vidDuration2);
+function ControlVid2() { 
+let delay2 = (Math.floor(Math.random() * 20000)+500);
 vid2.playbackRate = Math.random()*3-1.5;
-vidDuration2 = Math.random()*10+2;
-} 
+setTimeout(function resetPlaySpeed2(){ 
+ControlVid2() ;
+}, delay2);
+}
 
+
+function AddOnloadEvent(f) {
+if(typeof window.onload != 'function') { window.onload = f; }
+else {
+   var cache = window.onload;
+   window.onload = function() {
+      if(cache) { cache(); }
+      f();
+      };
+   }
+}
+
+AddOnloadEvent(ControlVid1);
+AddOnloadEvent(ControlVid2);
+
+
+
+vid1.onpause = function() {restartVideo1()};
+vid2.onpause = function() {restartVideo2()};
+
+function restartVideo1(){
+vid1.currentTime = vid1.duration; 
+vid1.play(); 
+}
+
+function restartVideo2(){
+vid2.currentTime = vid2.duration; 
+vid2.play(); 
+}
 
 </script> 
 </body> 
 </html>
+
+
+
 
 
