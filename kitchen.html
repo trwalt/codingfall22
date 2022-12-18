@@ -1,6 +1,5 @@
-<!<!DOCTYPE html> 
+<!DOCTYPE html> 
 <html> 
-
 <style>
 body{
 background-color: black;
@@ -18,7 +17,6 @@ background-color: black;
   z-index: -1; opacity: 1;
 }      
 </style>
-
 <body>
 
 <video id="Video1" autoplay loop muted 
@@ -26,21 +24,19 @@ background-color: black;
   Your browser does not support HTML5 video.
 </video>
 
-
-
 <video id="Video2" autoplay loop muted>
   <source src="https://trwalt.github.io/codingfall22/images/KitchenSmall.mp4" type="video/mp4">
   Your browser does not support HTML5 video.
 </video>
 
-
+<audio id="myaudio" type="audio/mp3" controls="controls" autoplay="autoplay">
+</audio>
 
 <script>
-
-
 var vid1 = document.getElementById("Video1"); 
 var vid2 = document.getElementById("Video2");
 
+var sounds = new Array();      sounds[0]="https://trwalt.github.io/codingfall22/sound/2miles.mp3";  sounds[1]="https://trwalt.github.io/codingfall22/sound/drab.mp3";    sounds[2]="https://trwalt.github.io/codingfall22/sound/artist.mp3";  sounds[3]="https://trwalt.github.io/codingfall22/sound/betterkitchens.mp3";  sounds[4]="https://trwalt.github.io/codingfall22/sound/busyplace.mp3";  sounds[5]="https://trwalt.github.io/codingfall22/sound/certainly.mp3";      sounds[6]="https://trwalt.github.io/codingfall22/sound/different.mp3";  sounds[7]="https://trwalt.github.io/codingfall22/sound/dividends.mp3"; 
 
 function ControlVid1() { 
 let delay1 = (Math.floor(Math.random() * 20000)+500);
@@ -58,7 +54,6 @@ ControlVid2() ;
 }, delay2);
 }
 
-
 function AddOnloadEvent(f) {
 if(typeof window.onload != 'function') { window.onload = f; }
 else {
@@ -73,8 +68,6 @@ else {
 AddOnloadEvent(ControlVid1);
 AddOnloadEvent(ControlVid2);
 
-
-
 vid1.onpause = function() {restartVideo1()};
 vid2.onpause = function() {restartVideo2()};
 
@@ -84,14 +77,27 @@ vid1.play();
 }
 
 function restartVideo2(){
-vid2.currentTime = vid2.duration; 
-vid2.play(); 
+ vid2.currentTime = vid2.duration; 
+ vid2.play(); 
 }
+
+function getRandomSounds() {
+ var randomNum = Math.floor(Math.random()*sounds.length);
+ document.getElementById("myaudio").src=sounds[randomNum];
+ }
+
+getRandomSounds();
+
+myaudio.onpause = function() {restartAudio()};
+ 
+function restartAudio(){
+ getRandomSounds();
+ myaudio.play(); 
+ }
 
 </script> 
 </body> 
 </html>
-
 
 
 
