@@ -36,7 +36,15 @@ background-color: black;
 var vid1 = document.getElementById("Video1"); 
 var vid2 = document.getElementById("Video2");
 
-var sounds = new Array();      sounds[0]="https://trwalt.github.io/codingfall22/sound/2miles.mp3";  sounds[1]="https://trwalt.github.io/codingfall22/sound/drab.mp3";    sounds[2]="https://trwalt.github.io/codingfall22/sound/artist.mp3";  sounds[3]="https://trwalt.github.io/codingfall22/sound/betterkitchens.mp3";  sounds[4]="https://trwalt.github.io/codingfall22/sound/busyplace.mp3";  sounds[5]="https://trwalt.github.io/codingfall22/sound/certainly.mp3";      sounds[6]="https://trwalt.github.io/codingfall22/sound/different.mp3";  sounds[7]="https://trwalt.github.io/codingfall22/sound/dividends.mp3"; 
+var sounds = new Array();      
+  sounds[0]="https://trwalt.github.io/codingfall22/sound/2miles.mp3";  
+  sounds[1]="https://trwalt.github.io/codingfall22/sound/drab.mp3";    
+  sounds[2]="https://trwalt.github.io/codingfall22/sound/artist.mp3";  
+  sounds[3]="https://trwalt.github.io/codingfall22/sound/betterkitchens.mp3";  
+  sounds[4]="https://trwalt.github.io/codingfall22/sound/busyplace.mp3";  
+  sounds[5]="https://trwalt.github.io/codingfall22/sound/certainly.mp3";      
+  sounds[6]="https://trwalt.github.io/codingfall22/sound/different.mp3";  
+  sounds[7]="https://trwalt.github.io/codingfall22/sound/dividends.mp3"; 
 
 function ControlVid1() { 
 let delay1 = (Math.floor(Math.random() * 20000)+500);
@@ -86,9 +94,9 @@ function getRandomSounds() {
  document.getElementById("myaudio").src=sounds[randomNum];
  }
 
-getRandomSounds();
+AddOnloadEvent (getRandomSounds);
 
-myaudio.onpause = function() {restartAudio()};
+myaudio.onpause = restartAudio();
  
 function restartAudio(){
  getRandomSounds();
