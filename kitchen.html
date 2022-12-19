@@ -95,8 +95,13 @@ function getRandomSounds() {
  }
 
 AddOnloadEvent (getRandomSounds);
+AddOnloadEvent (myaudio.play());
 
-myaudio.onpause = restartAudio();
+myaudio.onpause = function restartAudio(){
+ getRandomSounds();
+ myaudio.play(); 
+ }
+
  
 function restartAudio(){
  getRandomSounds();
@@ -106,6 +111,7 @@ function restartAudio(){
 </script> 
 </body> 
 </html>
+
 
 
 
