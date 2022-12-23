@@ -1,0 +1,91 @@
+<!DOCTYPE html> 
+<html> 
+<style>
+body{
+background-color: black;
+}
+
+</style>
+<body>
+
+<audio id="Audio1" type="audio/mp3" controls paused>
+</audio>
+
+<audio id="Audio2" type="audio/mp3" controls paused>
+</audio>
+
+<script>
+
+var sounds = new Array();      
+  sounds[0]="https://trwalt.github.io/codingfall22/sound/2miles.mp3";  
+  sounds[1]="https://trwalt.github.io/codingfall22/sound/drab.mp3";    
+  sounds[2]="https://trwalt.github.io/codingfall22/sound/artist.mp3";  
+  sounds[3]="https://trwalt.github.io/codingfall22/sound/betterkitchens.mp3";  
+  sounds[4]="https://trwalt.github.io/codingfall22/sound/busyplace.mp3";  
+  sounds[5]="https://trwalt.github.io/codingfall22/sound/certainly.mp3";      
+  sounds[6]="https://trwalt.github.io/codingfall22/sound/different.mp3";  
+  sounds[7]="https://trwalt.github.io/codingfall22/sound/dividends.mp3"; 
+  
+
+
+var aud1 = document.getElementById("Audio1"); 
+var aud2 = document.getElementById("Audio2"); 
+
+
+function AddOnloadEvent(f) {
+if(typeof window.onload != 'function') { window.onload = f; }
+else {
+   var cache = window.onload;
+   window.onload = function() {
+      if(cache) { cache(); }
+      f();
+      };
+   }
+}
+
+function getRandomSounds1() {
+ var randomNum1 = Math.floor(Math.random()*sounds.length);
+ aud1.src=sounds[randomNum1];
+ }
+
+function getRandomSounds2() {
+ var randomNum2 = Math.floor(Math.random()*sounds.length);
+ aud2.src=sounds[randomNum2];
+ }
+
+function restartAudio1(){
+ getRandomSounds1();
+ aud1.play(); 
+ }
+ 
+function restartAudio2(){
+ getRandomSounds2();
+ aud2.load()
+ aud2.play(); 
+ }
+
+aud1.addEventListener("timeupdate", switchaudio2);
+aud2.addEventListener("timeupdate", switchaudio1);
+
+function switchaudio2(){
+if (aud1.currentTime >= (aud1.duration*.9)){       
+aud1.removeEventListener("timeupdate", switchaudio2);
+restartAudio2();
+aud2.addEventListener("timeupdate", switchaudio1);
+}}
+
+function switchaudio1(){
+if (aud2.currentTime >= (aud2.duration*.9)){       
+aud2.removeEventListener("timeupdate", switchaudio1);
+restartAudio1();
+aud1.addEventListener("timeupdate", switchaudio2);
+}}
+
+AddOnloadEvent(restartAudio1);
+
+
+
+  
+</script> 
+</body> 
+</html>
