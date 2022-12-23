@@ -4,15 +4,27 @@
 body{
 background-color: black;
 }
-
+button{
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+}
+button:hover {
+  color: white;
+  background-color: transparent;
+  text-decoration: none;
+}
 </style>
 <body>
 
-<audio id="Audio1" type="audio/mp3" controls paused>
+<audio id="Audio1" type="audio/mp3" muted>
 </audio>
 
-<audio id="Audio2" type="audio/mp3" controls paused>
+<audio id="Audio2" type="audio/mp3" muted>
 </audio>
+
+<button onclick="unmute()">unmute</button>
 
 <script>
 
@@ -83,9 +95,14 @@ aud1.addEventListener("timeupdate", switchaudio2);
 
 AddOnloadEvent(restartAudio1);
 
-
+function unmute(){
+aud1.muted = false; 
+aud2.muted = false;
+}
 
   
 </script> 
 </body> 
 </html>
+
+
