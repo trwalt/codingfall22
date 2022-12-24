@@ -24,7 +24,10 @@ button:hover {
 <audio id="Audio2" type="audio/mp3" muted>
 </audio>
 
-<button onclick="unmute()">unmute</button>
+
+<div>
+  <img id="button" src="https://trwalt.github.io/codingfall22/images/audiounmuted.png" />
+</div>
 
 <script>
 
@@ -95,14 +98,25 @@ aud1.addEventListener("timeupdate", switchaudio2);
 
 AddOnloadEvent(restartAudio1);
 
-function unmute(){
-aud1.muted = false; 
-aud2.muted = false;
+var button = document.getElementById("button"); 
+
+
+button.addEventListener("click", aud_mute_unmute);
+
+function aud_mute_unmute() {
+  if (aud1.muted) {
+    aud1.muted = false; 
+    aud2.muted = false;    
+    button.src = "https://trwalt.github.io/codingfall22/images/audiounmuted.png";
+  } else {
+    aud1.muted = true; 
+    aud2.muted = true;   
+    button.src = "https://trwalt.github.io/codingfall22/images/audiomuted.png";
+  }
 }
 
   
 </script> 
 </body> 
 </html>
-
 
