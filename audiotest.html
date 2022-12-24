@@ -4,14 +4,17 @@
 body{
 background-color: black;
 }
-button{
+#audbutton{
+  opacity: .5;
+  width: 10%;
   position: fixed;
   right: 0;
   bottom: 0;
   z-index: 2;
 }
-button:hover {
-  color: white;
+#audbutton:hover {
+  opacity: 1;
+  color: red;
   background-color: transparent;
   text-decoration: none;
 }
@@ -26,9 +29,10 @@ button:hover {
 
 
 <div>
-  <img id="button" src="https://trwalt.github.io/codingfall22/images/audiounmuted.png" />
+  <img id="audbutton" src="https://trwalt.github.io/codingfall22/images/audiomuted.png" />
 </div>
 
+</body>
 <script>
 
 var sounds = new Array();      
@@ -98,25 +102,48 @@ aud1.addEventListener("timeupdate", switchaudio2);
 
 AddOnloadEvent(restartAudio1);
 
-var button = document.getElementById("button"); 
+var audbutton = document.getElementById("audbutton"); 
 
+audbutton.addEventListener("click", aud_mute_unmute);
+audbutton.addEventListener("mouseover", mouseOver);
+audbutton.addEventListener("mouseout", mouseOut);
 
-button.addEventListener("click", aud_mute_unmute);
+var btnopover;
+var btnopout;
 
 function aud_mute_unmute() {
   if (aud1.muted) {
     aud1.muted = false; 
     aud2.muted = false;    
-    button.src = "https://trwalt.github.io/codingfall22/images/audiounmuted.png";
+    audbutton.src = "https://trwalt.github.io/codingfall22/images/audiounmuted.png";
+    btnopover = ".5";
+    btnopout = "0";
   } else {
     aud1.muted = true; 
     aud2.muted = true;   
-    button.src = "https://trwalt.github.io/codingfall22/images/audiomuted.png";
+    audbutton.src = "https://trwalt.github.io/codingfall22/images/audiomuted.png";
+    btnopover = "1";
+    btnopout = ".5";
   }
 }
 
-  
-</script> 
-</body> 
-</html>
+function mouseOver() {
+  audbutton.style.opacity = btnopover;
+}
 
+function mouseOut() {
+  audbutton.style.opacity = btnopout;
+}
+
+</script>
+</html>
+audbutton.addEventListener("mouseover", mouseOver);
+audbutton.addEventListener("mouseout", mouseOut);
+
+function mouseOver() {
+  audbutton.style.opacity = btnopover;
+}
+
+function mouseOut() {
+  audbutton.style.opacity = btnopout;
+}
