@@ -1,9 +1,23 @@
+
 <!DOCTYPE html> 
 <html> 
 <style>
 body{
 background-color: black;
 }
+#Video1 {
+  width: 100vw; height: 100vh;
+  object-fit: cover; position: fixed;
+  left: 0; right: 0; top: 0; bottom: 0;
+  z-index: 0; opacity: .5;
+}      
+#Video2 {
+  width: 100vw; height: 100vh;
+  object-fit: cover; position: fixed;
+  left: 0; right: 0; top: 0; bottom: 0;
+  z-index: -1; opacity: 1;
+}      
+
 #audbutton{
   opacity: .5;
   width: 10%;
@@ -12,14 +26,25 @@ background-color: black;
   bottom: 0;
   z-index: 2;
 }
+
 #audbutton:hover {
   opacity: 1;
-  color: red;
   background-color: transparent;
   text-decoration: none;
 }
+
 </style>
 <body>
+
+<video id="Video1" autoplay loop muted 
+  <source src="https://trwalt.github.io/codingfall22/images/KitchenSmall.mp4" type="video/mp4">
+  Your browser does not support HTML5 video.
+</video>
+
+<video id="Video2" autoplay loop muted>
+  <source src="https://trwalt.github.io/codingfall22/images/KitchenSmall.mp4" type="video/mp4">
+  Your browser does not support HTML5 video.
+</video>
 
 <audio id="Audio1" type="audio/mp3" muted>
 </audio>
@@ -27,29 +52,31 @@ background-color: black;
 <audio id="Audio2" type="audio/mp3" muted>
 </audio>
 
-
 <div>
   <img id="audbutton" src="https://trwalt.github.io/codingfall22/images/audiomuted.png" />
 </div>
 
-</body>
+</body> 
+
 <script>
+var vid1 = document.getElementById("Video1"); 
+var vid2 = document.getElementById("Video2");
 
-var sounds = new Array();      
-  sounds[0]="https://trwalt.github.io/codingfall22/sound/2miles.mp3";  
-  sounds[1]="https://trwalt.github.io/codingfall22/sound/drab.mp3";    
-  sounds[2]="https://trwalt.github.io/codingfall22/sound/artist.mp3";  
-  sounds[3]="https://trwalt.github.io/codingfall22/sound/betterkitchens.mp3";  
-  sounds[4]="https://trwalt.github.io/codingfall22/sound/busyplace.mp3";  
-  sounds[5]="https://trwalt.github.io/codingfall22/sound/certainly.mp3";      
-  sounds[6]="https://trwalt.github.io/codingfall22/sound/different.mp3";  
-  sounds[7]="https://trwalt.github.io/codingfall22/sound/dividends.mp3"; 
-  
+function ControlVid1() { 
+let delay1 = (Math.floor(Math.random() * 20000)+500);
+vid1.playbackRate = Math.random()*3-1.5;
+setTimeout(function resetPlaySpeed1(){ 
+ControlVid1() ;
+}, delay1);
+}
 
-
-var aud1 = document.getElementById("Audio1"); 
-var aud2 = document.getElementById("Audio2"); 
-
+function ControlVid2() { 
+let delay2 = (Math.floor(Math.random() * 20000)+500);
+vid2.playbackRate = Math.random()*3-1.5;
+setTimeout(function resetPlaySpeed2(){ 
+ControlVid2() ;
+}, delay2);
+}
 
 function AddOnloadEvent(f) {
 if(typeof window.onload != 'function') { window.onload = f; }
@@ -61,6 +88,35 @@ else {
       };
    }
 }
+
+AddOnloadEvent(ControlVid1);
+AddOnloadEvent(ControlVid2);
+
+vid1.onpause = function() {restartVideo1()};
+vid2.onpause = function() {restartVideo2()};
+
+function restartVideo1(){
+vid1.currentTime = vid1.duration; 
+vid1.play(); 
+}
+
+function restartVideo2(){
+ vid2.currentTime = vid2.duration; 
+ vid2.play(); 
+}
+
+var sounds = new Array();      
+  sounds[0]="https://trwalt.github.io/codingfall22/sound/2miles.mp3";  
+  sounds[1]="https://trwalt.github.io/codingfall22/sound/drab.mp3";    
+  sounds[2]="https://trwalt.github.io/codingfall22/sound/artist.mp3";  
+  sounds[3]="https://trwalt.github.io/codingfall22/sound/betterkitchens.mp3";  
+  sounds[4]="https://trwalt.github.io/codingfall22/sound/busyplace.mp3";  
+  sounds[5]="https://trwalt.github.io/codingfall22/sound/certainly.mp3";      
+  sounds[6]="https://trwalt.github.io/codingfall22/sound/different.mp3";  
+  sounds[7]="https://trwalt.github.io/codingfall22/sound/dividends.mp3"; 
+  
+var aud1 = document.getElementById("Audio1"); 
+var aud2 = document.getElementById("Audio2"); 
 
 function getRandomSounds1() {
  var randomNum1 = Math.floor(Math.random()*sounds.length);
@@ -135,6 +191,7 @@ function mouseOut() {
   audbutton.style.opacity = btnopout;
 }
 
-</script>
+</script> 
 </html>
+
 
