@@ -65,7 +65,7 @@ var vid2 = document.getElementById("Video2");
 
 function ControlVid1() { 
 let delay1 = (Math.floor(Math.random() * 20000)+500);
-vid1.playbackRate = Math.random()*4-2;
+vid1.playbackRate = Math.random()*3-1.5;
 setTimeout(function resetPlaySpeed1(){ 
 ControlVid1() ;
 }, delay1);
@@ -73,7 +73,7 @@ ControlVid1() ;
 
 function ControlVid2() { 
 let delay2 = (Math.floor(Math.random() * 20000)+500);
-vid2.playbackRate = Math.random()*4-2;
+vid2.playbackRate = Math.random()*3-1.5;
 setTimeout(function resetPlaySpeed2(){ 
 ControlVid2() ;
 }, delay2);
