@@ -44,17 +44,17 @@ background-color: black;
 </style>
 <body>
 
-<video id="Video1" autoplay loop muted> 
+<video id="Video1" muted> 
   <source src="https://trwalt.b-cdn.net/unsettlervid.mp4" type="video/mp4">
   Your browser does not support HTML5 video.
 </video>
 
-<video id="Video2" autoplay loop muted>
+<video id="Video2" muted>
   <source src="https://trwalt.b-cdn.net/unsettlervid.mp4" type="video/mp4">
   Your browser does not support HTML5 video.
 </video>
   
-<video id="Video3" autoplay loop muted>
+<video id="Video3" muted>
   <source src="https://trwalt.b-cdn.net/unsettlervid.mp4" type="video/mp4">
   Your browser does not support HTML5 video.
 </video>
@@ -78,28 +78,28 @@ var vid3 = document.getElementById("Video3");
 
 function ControlVid1() { 
 let delay1 = (Math.floor(Math.random() * 20000)+500);
-vid1.playbackRate = Math.random()*2.4-1.2;
+vid1.playbackRate = Math.random()*2.4-1;
 setTimeout(function resetPlaySpeed1(){ 
-ControlVid1() ;
+ControlVid1();
 }, delay1);
 }
 
 function ControlVid2() { 
 let delay2 = (Math.floor(Math.random() * 20000)+500);
-vid2.playbackRate = Math.random()*2.4-1.2;
+vid2.playbackRate = Math.random()*2.4-1;
 setTimeout(function resetPlaySpeed2(){ 
-ControlVid2() ;
+ControlVid2();
 }, delay2);
 }
 
 function ControlVid3() { 
 let delay3 = (Math.floor(Math.random() * 20000)+500);
-vid3.playbackRate = Math.random()*2.4-1.2;
+vid3.playbackRate = Math.random()*2.4-1;
 setTimeout(function resetPlaySpeed3(){ 
-ControlVid3() ;
+ControlVid3();
 }, delay3);
 }
-  
+
 function AddOnloadEvent(f) {
 if(typeof window.onload != 'function') { window.onload = f; }
 else {
@@ -111,27 +111,36 @@ else {
    }
 }
 
-AddOnloadEvent(ControlVid1);
-AddOnloadEvent(ControlVid2);
-AddOnloadEvent(ControlVid3);
+AddOnloadEvent(restartVideo1);
+AddOnloadEvent(restartVideo2);
+AddOnloadEvent(restartVideo3);
 
 vid1.onpause = function() {restartVideo1()};
 vid2.onpause = function() {restartVideo2()};
 vid3.onpause = function() {restartVideo3()};
 
 function restartVideo1(){
-vid1.currentTime = vid1.duration; 
-vid1.play(); 
+vid1.currentTime = 0;
+vid1.playbackRate = Math.random()+.2;
+vid1.play();
+let startdur1 = (Math.floor(Math.random() * 10000) / vid1.playbackRate);
+setTimeout(ControlVid1(), startdur1);
 }
 
 function restartVideo2(){
- vid2.currentTime = vid2.duration; 
- vid2.play(); 
+vid2.currentTime = 0;
+vid2.playbackRate = Math.random()+.2;
+vid2.play();
+let startdur2 = (Math.floor(Math.random() * 10000) / vid2.playbackRate);
+setTimeout(ControlVid2(), startdur2);
 }
 
 function restartVideo3(){
- vid3.currentTime = vid3.duration; 
- vid3.play(); 
+vid3.currentTime = 0;
+vid3.playbackRate = Math.random()+.2;
+vid3.play();
+let startdur3 = (Math.floor(Math.random() * 10000) / vid3.playbackRate);
+setTimeout(ControlVid3(), startdur3);
 }
 
 var sounds = new Array();      
