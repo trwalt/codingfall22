@@ -123,7 +123,7 @@ function restartVideo1(){
 vid1.currentTime = 0;
 vid1.playbackRate = Math.random()+.2;
 vid1.play();
-let startdur1 = (Math.floor(Math.random() * 10000) / vid1.playbackRate);
+let startdur1 = (Math.floor(Math.random() * 5000 + 5000) / vid1.playbackRate);
 setTimeout(ControlVid1(), startdur1);
 }
 
@@ -131,7 +131,7 @@ function restartVideo2(){
 vid2.currentTime = 0;
 vid2.playbackRate = Math.random()+.2;
 vid2.play();
-let startdur2 = (Math.floor(Math.random() * 10000) / vid2.playbackRate);
+let startdur2 = (Math.floor(Math.random() * 5000 + 5000) / vid2.playbackRate);
 setTimeout(ControlVid2(), startdur2);
 }
 
@@ -139,7 +139,7 @@ function restartVideo3(){
 vid3.currentTime = 0;
 vid3.playbackRate = Math.random()+.2;
 vid3.play();
-let startdur3 = (Math.floor(Math.random() * 10000) / vid3.playbackRate);
+let startdur3 = (Math.floor(Math.random() * 5000 + 5000) / vid3.playbackRate);
 setTimeout(ControlVid3(), startdur3);
 }
 
