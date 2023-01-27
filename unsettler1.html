@@ -65,6 +65,13 @@ background-color: black;
 <audio id="Audio2" type="audio/mp3" muted>
 </audio>
 
+<audio id="AudioPulse" type="audio/mp3" autoplay muted>
+<source src="https://trwalt.github.io/codingfall22/usound/pulse.mp3" type="audio/mp3">
+</audio>
+
+<audio id="AudioWaves" type="audio/mp3" muted>
+</audio>  
+  
 <div>
   <img id="audbutton" src="https://trwalt.github.io/codingfall22/images/audiomuted.png" />
 </div>
@@ -144,17 +151,19 @@ setTimeout(ControlVid3(), startdur3);
 }
 
 var sounds = new Array();      
-  sounds[0]="https://trwalt.github.io/codingfall22/sound/2miles.mp3";  
-  sounds[1]="https://trwalt.github.io/codingfall22/sound/drab.mp3";    
-  sounds[2]="https://trwalt.github.io/codingfall22/sound/artist.mp3";  
-  sounds[3]="https://trwalt.github.io/codingfall22/sound/betterkitchens.mp3";  
-  sounds[4]="https://trwalt.github.io/codingfall22/sound/busyplace.mp3";  
-  sounds[5]="https://trwalt.github.io/codingfall22/sound/certainly.mp3";      
-  sounds[6]="https://trwalt.github.io/codingfall22/sound/different.mp3";  
-  sounds[7]="https://trwalt.github.io/codingfall22/sound/dividends.mp3"; 
+  sounds[0]="https://trwalt.github.io/codingfall22/usound/belong.mp3";  
+  sounds[1]="https://trwalt.github.io/codingfall22/usound/clouds.mp3";    
+  sounds[2]="https://trwalt.github.io/codingfall22/usound/otherside.mp3";  
+  sounds[3]="https://trwalt.github.io/codingfall22/usound/salty.mp3";  
+  sounds[4]="https://trwalt.github.io/codingfall22/usound/settle.mp3";  
+  sounds[5]="https://trwalt.github.io/codingfall22/usound/theretohere.mp3"; 
+  sounds[6]="https://trwalt.github.io/codingfall22/usound/where.mp3"; 
+
   
 var aud1 = document.getElementById("Audio1"); 
 var aud2 = document.getElementById("Audio2"); 
+var audpulse = document.getElementById("AudioPulse");
+var audwaves = document.getElementById("AudioWaves");
 
 function getRandomSounds1() {
  var randomNum1 = Math.floor(Math.random()*sounds.length);
@@ -208,13 +217,15 @@ var btnopout;
 function aud_mute_unmute() {
   if (aud1.muted) {
     aud1.muted = false; 
-    aud2.muted = false;    
+    aud2.muted = false;  
+    audpulse.muted = false;
     audbutton.src = "https://trwalt.github.io/codingfall22/images/audiounmuted.png";
     btnopover = ".5";
     btnopout = "0";
   } else {
     aud1.muted = true; 
-    aud2.muted = true;   
+    aud2.muted = true;  
+    audpulse.muted = true;
     audbutton.src = "https://trwalt.github.io/codingfall22/images/audiomuted.png";
     btnopover = "1";
     btnopout = ".5";
