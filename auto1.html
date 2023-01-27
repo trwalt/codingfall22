@@ -1,4 +1,3 @@
-
 <!DOCTYPE html> 
 <html> 
 <style>
@@ -12,13 +11,7 @@ background-color: black;
   z-index: 0; opacity: .5;
   mix-blend-mode: plus-lighter;
 }      
-#Video2 {
-  width: 100vw; height: 100vh;
-  object-fit: cover; position: fixed;
-  left: 0; right: 0; top: 0; bottom: 0;
-  z-index: -1; opacity: .5;
-  mix-blend-mode: plus-lighter;
-}      
+   
 
 #audbutton{
   opacity: .5;
@@ -43,10 +36,7 @@ background-color: black;
   Your browser does not support HTML5 video.
 </video>
 
-<video id="Video2" autoplay loop muted>
-  <source src="https://trwalt.b-cdn.net/auto1.mp4" type="video/mp4">
-  Your browser does not support HTML5 video.
-</video>
+
 
 <audio id="Audio1" type="audio/mp3" muted>
 </audio>
@@ -62,7 +52,7 @@ background-color: black;
 
 <script>
 var vid1 = document.getElementById("Video1"); 
-var vid2 = document.getElementById("Video2");
+
 
 function ControlVid1() { 
 let delay1 = (Math.floor(Math.random() * 20000)+1000);
@@ -72,13 +62,7 @@ ControlVid1() ;
 }, delay1);
 }
 
-function ControlVid2() { 
-let delay2 = (Math.floor(Math.random() * 20000)+1000);
-vid2.playbackRate = Math.random()*2-1;
-setTimeout(function resetPlaySpeed2(){ 
-ControlVid2() ;
-}, delay2);
-}
+
 
 function AddOnloadEvent(f) {
 if(typeof window.onload != 'function') { window.onload = f; }
@@ -92,10 +76,10 @@ else {
 }
 
 AddOnloadEvent(ControlVid1);
-AddOnloadEvent(ControlVid2);
+
 
 vid1.onpause = function() {restartVideo1()};
-vid2.onpause = function() {restartVideo2()};
+
 
 function restartVideo1(){
 vid1.currentTime = vid1.duration; 
