@@ -44,17 +44,17 @@ background-color: black;
 </style>
 <body>
 
-<video id="Video1" paused muted> 
+<video id="Video1" autoplay muted> 
   <source src="https://trwalt.b-cdn.net/unsettlervid.mp4" type="video/mp4">
   Your browser does not support HTML5 video.
 </video>
 
-<video id="Video2" paused muted>
+<video id="Video2" autoplay muted>
   <source src="https://trwalt.b-cdn.net/unsettlervid.mp4" type="video/mp4">
   Your browser does not support HTML5 video.
 </video>
   
-<video id="Video3" paused muted>
+<video id="Video3" autoplay muted>
   <source src="https://trwalt.b-cdn.net/unsettlervid.mp4" type="video/mp4">
   Your browser does not support HTML5 video.
 </video>
@@ -85,7 +85,7 @@ var vid3 = document.getElementById("Video3");
 
 function ControlVid1() { 
 let delay1 = (Math.floor(Math.random() * 20000)+1000);
-vid1.playbackRate = Math.random()*2-1;
+vid1.playbackRate = Math.random()*2-.8;
 setTimeout(function resetPlaySpeed1(){ 
 ControlVid1() ;
 }, delay1);
@@ -93,7 +93,7 @@ ControlVid1() ;
 
 function ControlVid2() { 
 let delay2 = (Math.floor(Math.random() * 20000)+1000);
-vid2.playbackRate = Math.random()*2-1;
+vid2.playbackRate = Math.random()*2-.8;
 setTimeout(function resetPlaySpeed2(){ 
 ControlVid2() ;
 }, delay2);
@@ -101,7 +101,7 @@ ControlVid2() ;
 
 function ControlVid3() { 
 let delay3 = (Math.floor(Math.random() * 20000)+1000);
-vid2.playbackRate = Math.random()*2-1;
+vid2.playbackRate = Math.random()*2-.8;
 setTimeout(function resetPlaySpeed3(){ 
 ControlVid3() ;
 }, delay3);
