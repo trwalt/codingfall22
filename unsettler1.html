@@ -70,6 +70,7 @@ background-color: black;
 </audio>
 
 <audio id="AudioWaves" type="audio/mp3" muted>
+<source src="https://trwalt.github.io/codingfall22/usound/waves.mp3" type="audio/mp3">
 </audio>  
   
 <div>
@@ -150,6 +151,9 @@ var sounds = new Array();
   sounds[4]="https://trwalt.github.io/codingfall22/usound/settle.mp3";  
   sounds[5]="https://trwalt.github.io/codingfall22/usound/theretohere.mp3"; 
   sounds[6]="https://trwalt.github.io/codingfall22/usound/where.mp3"; 
+  sounds[7]="https://trwalt.github.io/codingfall22/usound/silence3.mp3";  
+  sounds[8]="https://trwalt.github.io/codingfall22/usound/silence5.mp3"; 
+  sounds[9]="https://trwalt.github.io/codingfall22/usound/silence8.mp3"; 
 
   
 var aud1 = document.getElementById("Audio1"); 
@@ -211,6 +215,7 @@ function aud_mute_unmute() {
     aud1.muted = false; 
     aud2.muted = false;  
     audpulse.muted = false;
+    audwaves.muted = false;
     audbutton.src = "https://trwalt.github.io/codingfall22/images/audiounmuted.png";
     btnopover = ".5";
     btnopout = "0";
@@ -218,6 +223,7 @@ function aud_mute_unmute() {
     aud1.muted = true; 
     aud2.muted = true;  
     audpulse.muted = true;
+    audwaves.muted = true;
     audbutton.src = "https://trwalt.github.io/codingfall22/images/audiomuted.png";
     btnopover = "1";
     btnopout = ".5";
