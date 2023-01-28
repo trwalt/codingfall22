@@ -1,0 +1,115 @@
+<!DOCTYPE html> 
+<html> 
+<style>
+body{
+background-color: black;
+}
+#Video1 {
+  width: 100vw; height: 100vh;
+  object-fit: cover; position: fixed;
+  left: 0; right: 0; top: 0; bottom: 0;
+  z-index: 0; opacity: .5;
+  mix-blend-mode: plus-lighter;
+}      
+#Video2 {
+  width: 100vw; height: 100vh;
+  object-fit: cover; position: fixed;
+  left: 0; right: 0; top: 0; bottom: 0;
+  z-index: -1; opacity: .5;
+  mix-blend-mode: plus-lighter;
+}      
+#Video3 {
+  width: 100vw; height: 100vh;
+  object-fit: cover; position: fixed;
+  left: 0; right: 0; top: 0; bottom: 0;
+  z-index: -2; opacity: .5;
+  mix-blend-mode: plus-lighter;
+}      
+  
+</style>
+<body>
+
+<video id="Video1" autoplay muted> 
+  <source src="https://trwalt.b-cdn.net/unsettlervid.mp4" type="video/mp4">
+  Your browser does not support HTML5 video.
+</video>
+
+<video id="Video2" autoplay muted>
+  <source src="https://trwalt.b-cdn.net/unsettlervid.mp4" type="video/mp4">
+  Your browser does not support HTML5 video.
+</video>
+  
+<video id="Video3" autoplay muted>
+  <source src="https://trwalt.b-cdn.net/unsettlervid.mp4" type="video/mp4">
+  Your browser does not support HTML5 video.
+</video>
+
+</body> 
+
+<script>
+var vid1 = document.getElementById("Video1"); 
+var vid2 = document.getElementById("Video2");
+var vid3 = document.getElementById("Video3");
+
+function ControlVid1() { 
+let delay1 = (Math.floor(Math.random() * 20000)+1000);
+vid1.playbackRate = Math.random()*2-.8;
+setTimeout(function resetPlaySpeed1(){ 
+ControlVid1() ;
+}, delay1);
+}
+
+function ControlVid2() { 
+let delay2 = (Math.floor(Math.random() * 20000)+1000);
+vid2.playbackRate = Math.random()*2-.8;
+setTimeout(function resetPlaySpeed2(){ 
+ControlVid2() ;
+}, delay2);
+}
+
+function ControlVid3() { 
+let delay3 = (Math.floor(Math.random() * 20000)+1000);
+vid2.playbackRate = Math.random()*2-.8;
+setTimeout(function resetPlaySpeed3(){ 
+ControlVid3() ;
+}, delay3);
+}
+  
+function AddOnloadEvent(f) {
+if(typeof window.onload != 'function') { window.onload = f; }
+else {
+   var cache = window.onload;
+   window.onload = function() {
+      if(cache) { cache(); }
+      f();
+      };
+   }
+}
+
+AddOnloadEvent(ControlVid1);
+AddOnloadEvent(ControlVid2);
+AddOnloadEvent(ControlVid3);
+
+vid1.onpause = function() {restartVideo1()};
+vid2.onpause = function() {restartVideo2()};
+vid3.onpause = function() {restartVideo3()};
+
+function restartVideo1(){
+vid1.currentTime = 0; 
+vid1.play(); 
+}
+
+function restartVideo2(){
+ vid2.currentTime = 0; 
+ vid2.play(); 
+}
+
+function restartVideo3(){
+ vid3.currentTime = 0; 
+ vid3.play(); 
+}
+
+</script> 
+</html>
+
+
