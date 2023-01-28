@@ -141,17 +141,17 @@ vid2.onpause = function() {restartVideo2()};
 vid3.onpause = function() {restartVideo3()};
 
 function restartVideo1(){
-vid1.currentTime = vid1.duration; 
+vid1.currentTime = 0; 
 vid1.play(); 
 }
 
 function restartVideo2(){
- vid2.currentTime = vid2.duration; 
+ vid2.currentTime = 0; 
  vid2.play(); 
 }
 
 function restartVideo3(){
- vid3.currentTime = vid3.duration; 
+ vid3.currentTime = 0; 
  vid3.play(); 
 }
   
@@ -367,6 +367,7 @@ function mouseOut() {
 
 </script> 
 </html>
+
 
 
 
