@@ -185,8 +185,6 @@ var aud6 = document.getElementById("Audio6");
 var audpulse = document.getElementById("AudioPulse");
 
 
-
-
 function restartAudio1(){
  getRandomSounds1();
  aud1.load();
@@ -223,20 +221,15 @@ function restartAudio6(){
  aud6.play(); 
  }
 
-aud1.onended = restartAudio2();
-aud2.onended = restartAudio3();
-aud3.onended = restartAudio4();
-aud4.onended = restartAudio5();
-aud5.onended = restartAudio6();
-aud6.onended = restartAudio1();
-
-
 AddOnloadEvent(restartAudio1);
+  
+aud1.onended = function restartAudio2();
+aud2.onended = function restartAudio3();
+aud3.onended = function restartAudio4();
+aud4.onended = function restartAudio5();
+aud5.onended = function restartAudio6();
+aud6.onended = function restartAudio1();
 
-aud1.volume = 1;
-aud2.volume = 1;
-aud3.volume = 1;
-aud4.volume = 1;
 
 var audbutton = document.getElementById("audbutton"); 
 
