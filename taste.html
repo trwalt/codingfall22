@@ -172,8 +172,8 @@ var Lsounds = new Array();
 
 
 var silence = new Array();      
-  Lsounds[7]="https://trwalt.github.io/codingfall22/usound/silence3.mp3";  
-  Lsounds[8]="https://trwalt.github.io/codingfall22/usound/silence5.mp3";    
+  silence[0]="https://trwalt.github.io/codingfall22/usound/silence3.mp3";  
+  silence[1]="https://trwalt.github.io/codingfall22/usound/silence5.mp3";    
 
   
 var aud1 = document.getElementById("Audio1"); 
@@ -192,7 +192,7 @@ function getRandomSounds1() {
 
 function getRandomSounds2() {
  var randomNum2 = Math.floor(Math.random()*silence.length);
- aud2.src=sounds[randomNum2];
+ aud2.src=silence[randomNum2];
  }
 
 function getRandomSounds3() {
@@ -202,7 +202,7 @@ function getRandomSounds3() {
 
 function getRandomSounds4() {
  var randomNum4 = Math.floor(Math.random()*silence.length);
- aud4.src=sounds[randomNum4];
+ aud4.src=silence[randomNum4];
  }
 
 function getRandomSounds5() {
