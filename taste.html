@@ -78,14 +78,9 @@ background-color: black;
 <audio id="Audio6" type="audio/mp3" muted>
 </audio>
 
-
-<audio id="AudioPulse" type="audio/mp3" autoplay muted>
+<audio id="AudioPulse" type="audio/mp3" autoplay loop muted>
 <source src="https://trwalt.github.io/codingfall22/usound/pulse.mp3" type="audio/mp3">
 </audio>
-
-<audio id="AudioWaves" type="audio/mp3" autoplay muted>
-<source src="https://trwalt.github.io/codingfall22/usound/waves.mp3" type="audio/mp3">
-</audio>  
   
 <div>
   <img id="audbutton" src="https://trwalt.github.io/codingfall22/images/audiomuted.png" />
@@ -190,7 +185,6 @@ var aud4 = document.getElementById("Audio4");
 var aud5 = document.getElementById("Audio5"); 
 var aud6 = document.getElementById("Audio6");
 var audpulse = document.getElementById("AudioPulse");
-var audwaves = document.getElementById("AudioWaves");
 
 function getRandomSounds1() {
  var randomNum1 = Math.floor(Math.random()*sounds.length);
@@ -259,67 +253,61 @@ function restartAudio6(){
  aud6.play(); 
  }
 
-
 aud1.addEventListener("timeupdate", switchaudio2);
-aud2.addEventListener("timeupdate", switchaudio1);
+aud2.addEventListener("timeupdate", switchaudio3);
 aud3.addEventListener("timeupdate", switchaudio4);
-aud4.addEventListener("timeupdate", switchaudio3);
+aud4.addEventListener("timeupdate", switchaudio5);
 aud5.addEventListener("timeupdate", switchaudio6);
-aud6.addEventListener("timeupdate", switchaudio5);
+aud6.addEventListener("timeupdate", switchaudio1);
 
-
+function switchaudio1(){
+if (aud6.currentTime >= (aud6.duration*.9)){       
+aud6.removeEventListener("timeupdate", switchaudio1);
+restartAudio1();
+aud1.addEventListener("timeupdate", switchaudio2);
+}}
+  
 function switchaudio2(){
 if (aud1.currentTime >= (aud1.duration*.9)){       
 aud1.removeEventListener("timeupdate", switchaudio2);
 restartAudio2();
-aud2.addEventListener("timeupdate", switchaudio1);
+aud3.addEventListener("timeupdate", switchaudio3);
 }}
-
-function switchaudio1(){
+  
+function switchaudio3(){
 if (aud2.currentTime >= (aud2.duration*.9)){       
-aud2.removeEventListener("timeupdate", switchaudio1);
-restartAudio1();
-aud1.addEventListener("timeupdate", switchaudio2);
+aud2.removeEventListener("timeupdate", switchaudio3);
+restartAudio3();
+aud3.addEventListener("timeupdate", switchaudio4);
 }}
-
+  
 function switchaudio4(){
 if (aud3.currentTime >= (aud3.duration*.9)){       
 aud3.removeEventListener("timeupdate", switchaudio4);
 restartAudio4();
-aud4.addEventListener("timeupdate", switchaudio3);
+aud4.addEventListener("timeupdate", switchaudio5);
 }}
 
-function switchaudio3(){
+function switchaudio5(){
 if (aud4.currentTime >= (aud4.duration*.9)){       
-aud4.removeEventListener("timeupdate", switchaudio3);
-restartAudio3();
-aud3.addEventListener("timeupdate", switchaudio4);
+aud4.removeEventListener("timeupdate", switchaudio5);
+restartAudio5();
+aud5.addEventListener("timeupdate", switchaudio6);
 }}
-
+  
 function switchaudio6(){
 if (aud5.currentTime >= (aud5.duration*.9)){       
 aud5.removeEventListener("timeupdate", switchaudio6);
 restartAudio6();
-aud6.addEventListener("timeupdate", switchaudio5);
-}}
-
-function switchaudio5(){
-if (aud6.currentTime >= (aud6.duration*.9)){       
-aud6.removeEventListener("timeupdate", switchaudio5);
-restartAudio5();
-aud5.addEventListener("timeupdate", switchaudio6);
+aud1.addEventListener("timeupdate", switchaudio1);
 }}
 
 AddOnloadEvent(restartAudio1);
-AddOnloadEvent(restartAudio3);
-AddOnloadEvent(restartAudio5);
 
-
-aud1.volume = .2;
-aud2.volume = .2;
-aud3.volume = .2;
-aud4.volume = .2;
-audwaves.volume = .5;
+aud1.volume = 1;
+aud2.volume = 1;
+aud3.volume = 1;
+aud4.volume = 1;
 
 var audbutton = document.getElementById("audbutton"); 
 
@@ -339,7 +327,6 @@ function aud_mute_unmute() {
     aud5.muted = false; 
     aud6.muted = false;  
     audpulse.muted = false;
-    audwaves.muted = false;
     audbutton.src = "https://trwalt.github.io/codingfall22/images/audiounmuted.png";
     btnopover = ".5";
     btnopout = "0";
@@ -351,7 +338,6 @@ function aud_mute_unmute() {
     aud5.muted = true; 
     aud6.muted = true;  
     audpulse.muted = true;
-    audwaves.muted = true;
     audbutton.src = "https://trwalt.github.io/codingfall22/images/audiomuted.png";
     btnopover = "1";
     btnopout = ".5";
