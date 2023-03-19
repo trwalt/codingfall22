@@ -79,7 +79,7 @@ background-color: black;
 </audio>
 
 <audio id="AudioPulse" type="audio/mp3" autoplay loop muted>
-<source src="https://trwalt.github.io/codingfall22/usound/pulse.mp3" type="audio/mp3">
+<source src="https://trwalt.github.io/codingfall22/tastesound/tastetones.mp3" type="audio/mp3">
 </audio>
   
 <div>
@@ -184,35 +184,7 @@ var aud5 = document.getElementById("Audio5");
 var aud6 = document.getElementById("Audio6");
 var audpulse = document.getElementById("AudioPulse");
 
-function getRandomSounds1() {
- var randomNum1 = Math.floor(Math.random()*sounds.length);
- aud1.src=sounds[randomNum1];
- }
 
-function getRandomSounds2() {
- var randomNum2 = Math.floor(Math.random()*silence.length);
- aud2.src=silence[randomNum2];
- }
-
-function getRandomSounds3() {
- var randomNum3 = Math.floor(Math.random()*sounds.length);
- aud3.src=sounds[randomNum3];
- }
-
-function getRandomSounds4() {
- var randomNum4 = Math.floor(Math.random()*silence.length);
- aud4.src=silence[randomNum4];
- }
-
-function getRandomSounds5() {
- var randomNum5 = Math.floor(Math.random()*Lsounds.length);
- aud5.src=Lsounds[randomNum5];
- }
-
-function getRandomSounds6() {
- var randomNum6 = Math.floor(Math.random()*silence.length);
- aud6.src=silence[randomNum6];
- }
 
 
 function restartAudio1(){
@@ -251,54 +223,13 @@ function restartAudio6(){
  aud6.play(); 
  }
 
-aud1.addEventListener("timeupdate", switchaudio2);
-aud2.addEventListener("timeupdate", switchaudio3);
-aud3.addEventListener("timeupdate", switchaudio4);
-aud4.addEventListener("timeupdate", switchaudio5);
-aud5.addEventListener("timeupdate", switchaudio6);
-aud6.addEventListener("timeupdate", switchaudio1);
+aud1.onended = restartAudio2();
+aud2.onended = restartAudio3();
+aud3.onended = restartAudio4();
+aud4.onended = restartAudio5();
+aud5.onended = restartAudio6();
+aud6.onended = restartAudio1();
 
-function switchaudio1(){
-if (aud6.currentTime >= (aud6.duration*.9)){       
-aud6.removeEventListener("timeupdate", switchaudio1);
-restartAudio1();
-aud1.addEventListener("timeupdate", switchaudio2);
-}}
-  
-function switchaudio2(){
-if (aud1.currentTime >= (aud1.duration*.9)){       
-aud1.removeEventListener("timeupdate", switchaudio2);
-restartAudio2();
-aud3.addEventListener("timeupdate", switchaudio3);
-}}
-  
-function switchaudio3(){
-if (aud2.currentTime >= (aud2.duration*.9)){       
-aud2.removeEventListener("timeupdate", switchaudio3);
-restartAudio3();
-aud3.addEventListener("timeupdate", switchaudio4);
-}}
-  
-function switchaudio4(){
-if (aud3.currentTime >= (aud3.duration*.9)){       
-aud3.removeEventListener("timeupdate", switchaudio4);
-restartAudio4();
-aud4.addEventListener("timeupdate", switchaudio5);
-}}
-
-function switchaudio5(){
-if (aud4.currentTime >= (aud4.duration*.9)){       
-aud4.removeEventListener("timeupdate", switchaudio5);
-restartAudio5();
-aud5.addEventListener("timeupdate", switchaudio6);
-}}
-  
-function switchaudio6(){
-if (aud5.currentTime >= (aud5.duration*.9)){       
-aud5.removeEventListener("timeupdate", switchaudio6);
-restartAudio6();
-aud1.addEventListener("timeupdate", switchaudio1);
-}}
 
 AddOnloadEvent(restartAudio1);
 
