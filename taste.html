@@ -65,20 +65,8 @@ background-color: black;
 <audio id="Audio2" type="audio/mp3" muted>
 </audio>
 
-<audio id="Audio3" type="audio/mp3" muted>
-</audio>
 
-<audio id="Audio4" type="audio/mp3" muted>
-</audio>
-
-<audio id="Audio5" type="audio/mp3" muted>
-</audio>
-
-<audio id="Audio6" type="audio/mp3" muted>
-</audio>
-
-
-<audio id="AudioPulse" type="audio/mp3" autoplay muted>
+<audio id="AudioPulse" type="audio/mp3" autoplay loop muted>
 <source src="https://trwalt.github.io/codingfall22/tastesound/tastetones.mp3" type="audio/mp3">
 </audio>
 
@@ -95,7 +83,7 @@ var vid3 = document.getElementById("Video3");
 
 function ControlVid1() { 
 let delay1 = (Math.floor(Math.random() * 20000)+1000);
-vid1.playbackRate = Math.random()*2-.8;
+vid1.playbackRate = Math.random()*1.2-.5;
 setTimeout(function resetPlaySpeed1(){ 
 ControlVid1() ;
 }, delay1);
@@ -103,7 +91,7 @@ ControlVid1() ;
 
 function ControlVid2() { 
 let delay2 = (Math.floor(Math.random() * 20000)+1000);
-vid2.playbackRate = Math.random()*2-.8;
+vid2.playbackRate = Math.random()*1.2-.5;
 setTimeout(function resetPlaySpeed2(){ 
 ControlVid2() ;
 }, delay2);
@@ -111,7 +99,7 @@ ControlVid2() ;
 
 function ControlVid3() { 
 let delay3 = (Math.floor(Math.random() * 20000)+1000);
-vid2.playbackRate = Math.random()*2-.8;
+vid2.playbackRate = Math.random()*1.2-.5;
 setTimeout(function resetPlaySpeed3(){ 
 ControlVid3() ;
 }, delay3);
@@ -159,32 +147,98 @@ var sounds = new Array();
   sounds[4]="https://trwalt.github.io/codingfall22/tastesound/tasteS5.mp3"; 
   sounds[5]="https://trwalt.github.io/codingfall22/tastesound/tasteS6.mp3";
   sounds[6]="https://trwalt.github.io/codingfall22/tastesound/tasteS7.mp3";
-  sounds[7]="https://trwalt.github.io/codingfall22/tastesound/tasteS8.mp3"; 
-  sounds[8]="https://trwalt.github.io/codingfall22/tastesound/tasteS9.mp3";
-
-var Lsounds = new Array();      
-  Lsounds[0]="https://trwalt.github.io/codingfall22/tastesound/tasteL1.mp3";  
-  Lsounds[1]="https://trwalt.github.io/codingfall22/tastesound/tasteL2.mp3";    
-  Lsounds[2]="https://trwalt.github.io/codingfall22/tastesound/tasteL3.mp3"; 
-  Lsounds[3]="https://trwalt.github.io/codingfall22/tastesound/tasteL4.mp3"; 
-  Lsounds[4]="https://trwalt.github.io/codingfall22/tastesound/tasteL5.mp3"; 
-  Lsounds[5]="https://trwalt.github.io/codingfall22/tastesound/tasteL6.mp3";
-  Lsounds[6]="https://trwalt.github.io/codingfall22/tastesound/tasteL7.mp3";
-  Lsounds[7]="https://trwalt.github.io/codingfall22/tastesound/tasteL8.mp3"; 
-  Lsounds[8]="https://trwalt.github.io/codingfall22/tastesound/tasteL9.mp3";
+  sounds[7]="https://trwalt.github.io/codingfall22/tastesound/tasteS8.mp3";   
+  sounds[8]="https://trwalt.github.io/codingfall22/usound/silence3.mp3";  
+  sounds[9]="https://trwalt.github.io/codingfall22/usound/silence5.mp3";
+  sounds[10]="https://trwalt.github.io/codingfall22/tastesound/tasteS9.mp3" 
+  sounds[11]="https://trwalt.github.io/codingfall22/tastesound/tasteS10.mp3";    
+  sounds[12]="https://trwalt.github.io/codingfall22/tastesound/tasteS11.mp3"; 
+  sounds[13]="https://trwalt.github.io/codingfall22/tastesound/tasteS12.mp3"; 
+  sounds[14]="https://trwalt.github.io/codingfall22/tastesound/tasteS13.mp3"; 
+  sounds[15]="https://trwalt.github.io/codingfall22/tastesound/tasteS14.mp3";
+  sounds[16]="https://trwalt.github.io/codingfall22/tastesound/tasteS15.mp3";
+  sounds[17]="https://trwalt.github.io/codingfall22/tastesound/tasteS16.mp3";   
+  sounds[18]="https://trwalt.github.io/codingfall22/usound/silence3.mp3";  
+  sounds[19]="https://trwalt.github.io/codingfall22/usound/silence5.mp3";  
+  sounds[20]="https://trwalt.github.io/codingfall22/tastesound/tasteS17.mp3";
+  sounds[21]="https://trwalt.github.io/codingfall22/tastesound/tasteS18.mp3";    
+  sounds[22]="https://trwalt.github.io/codingfall22/tastesound/tasteS19.mp3"; 
+  sounds[23]="https://trwalt.github.io/codingfall22/tastesound/tasteS20.mp3"; 
+  sounds[24]="https://trwalt.github.io/codingfall22/tastesound/tasteS21.mp3"; 
+  sounds[25]="https://trwalt.github.io/codingfall22/tastesound/tasteS22.mp3";
+  sounds[26]="https://trwalt.github.io/codingfall22/tastesound/tasteS23.mp3";
+  sounds[27]="https://trwalt.github.io/codingfall22/tastesound/tasteS24.mp3";
+  sounds[28]="https://trwalt.github.io/codingfall22/usound/silence3.mp3";  
+  sounds[29]="https://trwalt.github.io/codingfall22/usound/silence5.mp3";
+  sounds[30]="https://trwalt.github.io/codingfall22/tastesound/tasteS25.mp3";  
+  sounds[31]="https://trwalt.github.io/codingfall22/tastesound/tasteS26.mp3";    
+  sounds[32]="https://trwalt.github.io/codingfall22/tastesound/tasteS27.mp3"; 
+  sounds[33]="https://trwalt.github.io/codingfall22/tastesound/tasteS28.mp3"; 
+  sounds[34]="https://trwalt.github.io/codingfall22/tastesound/tasteS29.mp3"; 
+  sounds[35]="https://trwalt.github.io/codingfall22/tastesound/tasteS30.mp3";
+  sounds[36]="https://trwalt.github.io/codingfall22/tastesound/tasteS31.mp3";
+  sounds[37]="https://trwalt.github.io/codingfall22/tastesound/tasteS32.mp3";   
+  sounds[38]="https://trwalt.github.io/codingfall22/usound/silence3.mp3";  
+  sounds[39]="https://trwalt.github.io/codingfall22/usound/silence5.mp3";
+  sounds[40]="https://trwalt.github.io/codingfall22/tastesound/tasteS33.mp3";  
+  sounds[41]="https://trwalt.github.io/codingfall22/tastesound/tasteS34.mp3";    
+  sounds[42]="https://trwalt.github.io/codingfall22/tastesound/tasteS35.mp3"; 
+  sounds[43]="https://trwalt.github.io/codingfall22/tastesound/tasteS36.mp3"; 
+  sounds[44]="https://trwalt.github.io/codingfall22/tastesound/tasteS37.mp3"; 
+  sounds[45]="https://trwalt.github.io/codingfall22/tastesound/tasteS38.mp3";
+  sounds[46]="https://trwalt.github.io/codingfall22/tastesound/tasteS38.mp3";
+  sounds[47]="https://trwalt.github.io/codingfall22/tastesound/tasteS40.mp3";   
+  sounds[48]="https://trwalt.github.io/codingfall22/usound/silence3.mp3";  
+  sounds[49]="https://trwalt.github.io/codingfall22/usound/silence5.mp3";
+  sounds[50]="https://trwalt.github.io/codingfall22/tastesound/tasteS41.mp3";  
+  sounds[51]="https://trwalt.github.io/codingfall22/tastesound/tasteS42.mp3";    
+  sounds[52]="https://trwalt.github.io/codingfall22/tastesound/tasteS43.mp3"; 
+  sounds[53]="https://trwalt.github.io/codingfall22/tastesound/tasteS44.mp3"; 
+  sounds[54]="https://trwalt.github.io/codingfall22/tastesound/tasteS45.mp3"; 
+  sounds[55]="https://trwalt.github.io/codingfall22/tastesound/tasteL1.mp3";
+  sounds[56]="https://trwalt.github.io/codingfall22/tastesound/tasteL2.mp3";
+  sounds[57]="https://trwalt.github.io/codingfall22/tastesound/tasteL3.mp3";   
+  sounds[58]="https://trwalt.github.io/codingfall22/usound/silence3.mp3";  
+  sounds[59]="https://trwalt.github.io/codingfall22/usound/silence5.mp3";
+  sounds[60]="https://trwalt.github.io/codingfall22/tastesound/tasteL4.mp3";  
+  sounds[61]="https://trwalt.github.io/codingfall22/tastesound/tasteL5.mp3";    
+  sounds[62]="https://trwalt.github.io/codingfall22/tastesound/tasteL6.mp3"; 
+  sounds[63]="https://trwalt.github.io/codingfall22/tastesound/tasteL7.mp3"; 
+  sounds[64]="https://trwalt.github.io/codingfall22/tastesound/tasteL8.mp3"; 
+  sounds[65]="https://trwalt.github.io/codingfall22/tastesound/tasteL9.mp3";
+  sounds[66]="https://trwalt.github.io/codingfall22/tastesound/tasteL10.mp3";
+  sounds[67]="https://trwalt.github.io/codingfall22/tastesound/tasteL11.mp3";   
+  sounds[68]="https://trwalt.github.io/codingfall22/usound/silence3.mp3";  
+  sounds[69]="https://trwalt.github.io/codingfall22/usound/silence5.mp3";
+  sounds[70]="https://trwalt.github.io/codingfall22/tastesound/tasteL12.mp3";  
+  sounds[71]="https://trwalt.github.io/codingfall22/tastesound/tasteL13.mp3";    
+  sounds[72]="https://trwalt.github.io/codingfall22/tastesound/tasteL14.mp3"; 
+  sounds[73]="https://trwalt.github.io/codingfall22/tastesound/tasteL15.mp3"; 
+  sounds[74]="https://trwalt.github.io/codingfall22/tastesound/tasteL16.mp3"; 
+  sounds[75]="https://trwalt.github.io/codingfall22/tastesound/tasteL17.mp3";
+  sounds[76]="https://trwalt.github.io/codingfall22/tastesound/tasteL18.mp3";
+  sounds[77]="https://trwalt.github.io/codingfall22/tastesound/tasteL19.mp3";   
+  sounds[78]="https://trwalt.github.io/codingfall22/usound/silence3.mp3";  
+  sounds[79]="https://trwalt.github.io/codingfall22/usound/silence5.mp3";
+  sounds[80]="https://trwalt.github.io/codingfall22/tastesound/tasteL20.mp3";  
+  sounds[81]="https://trwalt.github.io/codingfall22/tastesound/tasteL21.mp3";    
+  sounds[82]="https://trwalt.github.io/codingfall22/tastesound/tasteL22.mp3"; 
+  sounds[83]="https://trwalt.github.io/codingfall22/tastesound/tasteL23.mp3"; 
+  sounds[84]="https://trwalt.github.io/codingfall22/tastesound/tasteL24.mp3"; 
+  sounds[85]="https://trwalt.github.io/codingfall22/usound/silence3.mp3";
+  sounds[86]="https://trwalt.github.io/codingfall22/usound/silence3.mp3";
+  sounds[87]="https://trwalt.github.io/codingfall22/usound/silence3.mp3";  
+  sounds[88]="https://trwalt.github.io/codingfall22/usound/silence3.mp3";  
+  sounds[89]="https://trwalt.github.io/codingfall22/usound/silence5.mp3";
 
 var silence = new Array();      
-  silence[0]="https://trwalt.github.io/codingfall22/usound/silence8.mp3";  
-  silence[1]="https://trwalt.github.io/codingfall22/usound/silence15.mp3";    
-
+  silence[0]="https://trwalt.github.io/codingfall22/usound/silence3.mp3";  
+  silence[1]="https://trwalt.github.io/codingfall22/usound/silence5.mp3";
   
 var aud1 = document.getElementById("Audio1"); 
 var aud2 = document.getElementById("Audio2");
-var aud3 = document.getElementById("Audio3"); 
-var aud4 = document.getElementById("Audio4");
-var aud5 = document.getElementById("Audio5"); 
-var aud6 = document.getElementById("Audio6");
 var audpulse = document.getElementById("AudioPulse");
+
 
 function getRandomSounds1() {
  var randomNum1 = Math.floor(Math.random()*sounds.length);
@@ -196,25 +250,6 @@ function getRandomSounds2() {
  aud2.src=silence[randomNum2];
  }
 
-function getRandomSounds3() {
- var randomNum3 = Math.floor(Math.random()*silence.length);
- aud3.src=silence[randomNum3];
- }
-
-function getRandomSounds4() {
- var randomNum4 = Math.floor(Math.random()*sounds.length);
- aud4.src=sounds[randomNum4];
- }
-
-function getRandomSounds5() {
- var randomNum5 = Math.floor(Math.random()*Lsounds.length);
- aud5.src=Lsounds[randomNum5];
- }
-
-function getRandomSounds6() {
- var randomNum6 = Math.floor(Math.random()*silence.length);
- aud6.src=silence[randomNum6];
- }
 
 
 function restartAudio1(){
@@ -229,37 +264,10 @@ function restartAudio2(){
  aud2.play(); 
  }
 
-function restartAudio3(){
- getRandomSounds3();
- aud3.load();
- aud3.play(); 
- }
-
-function restartAudio4(){
- getRandomSounds4();
- aud4.load();
- aud4.play(); 
- }
-
-function restartAudio5(){
- getRandomSounds5();
- aud5.load();
- aud5.play(); 
- }
-
-function restartAudio6(){
- getRandomSounds6();
- aud6.load();
- aud6.play(); 
- }
-
 
 aud1.addEventListener("timeupdate", switchaudio2);
 aud2.addEventListener("timeupdate", switchaudio1);
-aud3.addEventListener("timeupdate", switchaudio4);
-aud4.addEventListener("timeupdate", switchaudio3);
-aud5.addEventListener("timeupdate", switchaudio6);
-aud6.addEventListener("timeupdate", switchaudio5);
+
 
 
 function switchaudio2(){
@@ -276,43 +284,15 @@ restartAudio1();
 aud1.addEventListener("timeupdate", switchaudio2);
 }}
 
-function switchaudio4(){
-if (aud3.currentTime >= (aud3.duration*.9)){       
-aud3.removeEventListener("timeupdate", switchaudio4);
-restartAudio4();
-aud4.addEventListener("timeupdate", switchaudio3);
-}}
 
-function switchaudio3(){
-if (aud4.currentTime >= (aud4.duration*.9)){       
-aud4.removeEventListener("timeupdate", switchaudio3);
-restartAudio3();
-aud3.addEventListener("timeupdate", switchaudio4);
-}}
-
-function switchaudio6(){
-if (aud5.currentTime >= (aud5.duration*.9)){       
-aud5.removeEventListener("timeupdate", switchaudio6);
-restartAudio6();
-aud6.addEventListener("timeupdate", switchaudio5);
-}}
-
-function switchaudio5(){
-if (aud6.currentTime >= (aud6.duration*.9)){       
-aud6.removeEventListener("timeupdate", switchaudio5);
-restartAudio5();
-aud5.addEventListener("timeupdate", switchaudio6);
-}}
 
 AddOnloadEvent(restartAudio1);
-AddOnloadEvent(restartAudio3);
-AddOnloadEvent(restartAudio5);
 
 
-aud1.volume = .2;
-aud2.volume = .2;
-aud3.volume = .2;
-aud4.volume = .2;
+aud1.volume = .07;
+aud2.volume = .08;
+audpulse.volume = .8;
+
 
 var audbutton = document.getElementById("audbutton"); 
 
@@ -327,10 +307,6 @@ function aud_mute_unmute() {
   if (aud1.muted) {
     aud1.muted = false; 
     aud2.muted = false;  
-    aud3.muted = false; 
-    aud4.muted = false;  
-    aud5.muted = false; 
-    aud6.muted = false;  
     audpulse.muted = false;
     audbutton.src = "https://trwalt.github.io/codingfall22/images/audiounmuted.png";
     btnopover = ".5";
@@ -338,10 +314,6 @@ function aud_mute_unmute() {
   } else {
     aud1.muted = true; 
     aud2.muted = true;
-    aud3.muted = true; 
-    aud4.muted = true;  
-    aud5.muted = true; 
-    aud6.muted = true;  
     audpulse.muted = true;
     audbutton.src = "https://trwalt.github.io/codingfall22/images/audiomuted.png";
     btnopover = "1";
@@ -359,4 +331,7 @@ function mouseOut() {
 
 </script> 
 </html>
+
+
+
 
