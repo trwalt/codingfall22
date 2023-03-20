@@ -1,4 +1,3 @@
-
 <!DOCTYPE html> 
 <html> 
 <style>
@@ -46,7 +45,7 @@ background-color: black;
 <body>
 
 <video id="Video1" autoplay muted> 
-  <source src="https://trwalt.github.io/codingfall22/images/tastevideo1.mp4" type="video/mp4">
+  <source src="https://trwalt.github.io/codingfall22/images/tastevideo1.mp4" type="video/mp4"> type="video/mp4">
   Your browser does not support HTML5 video.
 </video>
 
@@ -78,10 +77,11 @@ background-color: black;
 <audio id="Audio6" type="audio/mp3" muted>
 </audio>
 
-<audio id="AudioPulse" type="audio/mp3" autoplay loop muted>
+
+<audio id="AudioPulse" type="audio/mp3" autoplay muted>
 <source src="https://trwalt.github.io/codingfall22/tastesound/tastetones.mp3" type="audio/mp3">
 </audio>
-  
+
 <div>
   <img id="audbutton" src="https://trwalt.github.io/codingfall22/images/audiomuted.png" />
 </div>
@@ -152,28 +152,30 @@ function restartVideo3(){
 }
   
 var sounds = new Array();      
-  sounds[0]="https://trwalt.github.io/codingfall22/usound/belong.mp3";  
-  sounds[1]="https://trwalt.github.io/codingfall22/usound/clouds.mp3";    
-  sounds[2]="https://trwalt.github.io/codingfall22/usound/otherside.mp3";  
-  sounds[3]="https://trwalt.github.io/codingfall22/usound/salty.mp3";  
-  sounds[4]="https://trwalt.github.io/codingfall22/usound/settle.mp3";  
-  sounds[5]="https://trwalt.github.io/codingfall22/usound/theretohere.mp3"; 
-  sounds[6]="https://trwalt.github.io/codingfall22/usound/where.mp3"; 
-
+  sounds[0]="https://trwalt.github.io/codingfall22/tastesound/tasteS1.mp3";  
+  sounds[1]="https://trwalt.github.io/codingfall22/tastesound/tasteS2.mp3";    
+  sounds[2]="https://trwalt.github.io/codingfall22/tastesound/tasteS3.mp3"; 
+  sounds[3]="https://trwalt.github.io/codingfall22/tastesound/tasteS4.mp3"; 
+  sounds[4]="https://trwalt.github.io/codingfall22/tastesound/tasteS5.mp3"; 
+  sounds[5]="https://trwalt.github.io/codingfall22/tastesound/tasteS6.mp3";
+  sounds[6]="https://trwalt.github.io/codingfall22/tastesound/tasteS7.mp3";
+  sounds[7]="https://trwalt.github.io/codingfall22/tastesound/tasteS8.mp3"; 
+  sounds[8]="https://trwalt.github.io/codingfall22/tastesound/tasteS9.mp3";
 
 var Lsounds = new Array();      
-  Lsounds[0]="https://trwalt.github.io/codingfall22/usound/boundaryx.mp3";  
-  Lsounds[1]="https://trwalt.github.io/codingfall22/usound/experiencex.mp3";    
-  Lsounds[2]="https://trwalt.github.io/codingfall22/usound/interpretationx.mp3"; 
-  Lsounds[3]="https://trwalt.github.io/codingfall22/usound/overagainx.mp3";  
-  Lsounds[4]="https://trwalt.github.io/codingfall22/usound/permeabilityx.mp3";  
-  Lsounds[5]="https://trwalt.github.io/codingfall22/usound/powerx.mp3"; 
-  Lsounds[6]="https://trwalt.github.io/codingfall22/usound/subjectivityx.mp3"; 
-
+  Lsounds[0]="https://trwalt.github.io/codingfall22/tastesound/tasteL1.mp3";  
+  Lsounds[1]="https://trwalt.github.io/codingfall22/tastesound/tasteL2.mp3";    
+  Lsounds[2]="https://trwalt.github.io/codingfall22/tastesound/tasteL3.mp3"; 
+  Lsounds[3]="https://trwalt.github.io/codingfall22/tastesound/tasteL4.mp3"; 
+  Lsounds[4]="https://trwalt.github.io/codingfall22/tastesound/tasteL5.mp3"; 
+  Lsounds[5]="https://trwalt.github.io/codingfall22/tastesound/tasteL6.mp3";
+  Lsounds[6]="https://trwalt.github.io/codingfall22/tastesound/tasteL7.mp3";
+  Lsounds[7]="https://trwalt.github.io/codingfall22/tastesound/tasteL8.mp3"; 
+  Lsounds[8]="https://trwalt.github.io/codingfall22/tastesound/tasteL9.mp3";
 
 var silence = new Array();      
-  silence[0]="https://trwalt.github.io/codingfall22/usound/silence3.mp3";  
-  silence[1]="https://trwalt.github.io/codingfall22/usound/silence5.mp3";    
+  silence[0]="https://trwalt.github.io/codingfall22/usound/silence8.mp3";  
+  silence[1]="https://trwalt.github.io/codingfall22/usound/silence15.mp3";    
 
   
 var aud1 = document.getElementById("Audio1"); 
@@ -183,7 +185,6 @@ var aud4 = document.getElementById("Audio4");
 var aud5 = document.getElementById("Audio5"); 
 var aud6 = document.getElementById("Audio6");
 var audpulse = document.getElementById("AudioPulse");
-
 
 function getRandomSounds1() {
  var randomNum1 = Math.floor(Math.random()*sounds.length);
@@ -196,13 +197,13 @@ function getRandomSounds2() {
  }
 
 function getRandomSounds3() {
- var randomNum3 = Math.floor(Math.random()*sounds.length);
- aud3.src=sounds[randomNum3];
+ var randomNum3 = Math.floor(Math.random()*silence.length);
+ aud3.src=silence[randomNum3];
  }
 
 function getRandomSounds4() {
- var randomNum4 = Math.floor(Math.random()*silence.length);
- aud4.src=silence[randomNum4];
+ var randomNum4 = Math.floor(Math.random()*sounds.length);
+ aud4.src=sounds[randomNum4];
  }
 
 function getRandomSounds5() {
@@ -214,7 +215,8 @@ function getRandomSounds6() {
  var randomNum6 = Math.floor(Math.random()*silence.length);
  aud6.src=silence[randomNum6];
  }
-  
+
+
 function restartAudio1(){
  getRandomSounds1();
  aud1.load();
@@ -251,15 +253,66 @@ function restartAudio6(){
  aud6.play(); 
  }
 
-AddOnloadEvent(restartAudio1);
-  
-aud1.onended = function restartAudio2();
-aud2.onended = function restartAudio3();
-aud3.onended = function restartAudio4();
-aud4.onended = function restartAudio5();
-aud5.onended = function restartAudio6();
-aud6.onended = function restartAudio1();
 
+aud1.addEventListener("timeupdate", switchaudio2);
+aud2.addEventListener("timeupdate", switchaudio1);
+aud3.addEventListener("timeupdate", switchaudio4);
+aud4.addEventListener("timeupdate", switchaudio3);
+aud5.addEventListener("timeupdate", switchaudio6);
+aud6.addEventListener("timeupdate", switchaudio5);
+
+
+function switchaudio2(){
+if (aud1.currentTime >= (aud1.duration*.9)){       
+aud1.removeEventListener("timeupdate", switchaudio2);
+restartAudio2();
+aud2.addEventListener("timeupdate", switchaudio1);
+}}
+
+function switchaudio1(){
+if (aud2.currentTime >= (aud2.duration*.9)){       
+aud2.removeEventListener("timeupdate", switchaudio1);
+restartAudio1();
+aud1.addEventListener("timeupdate", switchaudio2);
+}}
+
+function switchaudio4(){
+if (aud3.currentTime >= (aud3.duration*.9)){       
+aud3.removeEventListener("timeupdate", switchaudio4);
+restartAudio4();
+aud4.addEventListener("timeupdate", switchaudio3);
+}}
+
+function switchaudio3(){
+if (aud4.currentTime >= (aud4.duration*.9)){       
+aud4.removeEventListener("timeupdate", switchaudio3);
+restartAudio3();
+aud3.addEventListener("timeupdate", switchaudio4);
+}}
+
+function switchaudio6(){
+if (aud5.currentTime >= (aud5.duration*.9)){       
+aud5.removeEventListener("timeupdate", switchaudio6);
+restartAudio6();
+aud6.addEventListener("timeupdate", switchaudio5);
+}}
+
+function switchaudio5(){
+if (aud6.currentTime >= (aud6.duration*.9)){       
+aud6.removeEventListener("timeupdate", switchaudio5);
+restartAudio5();
+aud5.addEventListener("timeupdate", switchaudio6);
+}}
+
+AddOnloadEvent(restartAudio1);
+AddOnloadEvent(restartAudio3);
+AddOnloadEvent(restartAudio5);
+
+
+aud1.volume = .2;
+aud2.volume = .2;
+aud3.volume = .2;
+aud4.volume = .2;
 
 var audbutton = document.getElementById("audbutton"); 
 
@@ -306,3 +359,4 @@ function mouseOut() {
 
 </script> 
 </html>
+
